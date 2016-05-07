@@ -6,7 +6,7 @@ String author = "Kelly Hernandez";
 int [] num = {100, 23, 7, 11, 344, 630, 42, 26, 90, 57, 10};
 int numbers=  num.length;
 void setup() {
-  size (600, 500);
+  size (500, 500);
 }
 
 void draw() {
@@ -118,22 +118,35 @@ void buttons() {
   y =400;
   fill(255, 200);          //big
   rect(x, y, 50, 50);
-
+ if (mouseX > x && mouseX < x+50 && mouseY > y && mouseY < y+50 && mousePressed) {///this makes it click, 
+    big( num, numbers );/////this is the piece of code, copy it and adjusted for every function that you want it to do
+ 
+ }
   fill(0, 100, 150);            //small
   rect(x+100, y, 50, 50);
-
+if (mouseX > x && mouseX < x+100 && mouseY > y && mouseY < y+50 && mousePressed) {///this makes it click, 
+    small( num, numbers );
+ }
   fill(50, 150, 50);    //add
   rect(x+200, y, 50, 50);
-
+if (mouseX > x && mouseX < x+200 && mouseY > y && mouseY < y+50 && mousePressed) {///this makes it click, 
+    inc( num, numbers );/////t
+ }
   fill(150, 175, 200);    //minus
   rect(x+300, y, 50, 50);
-
+if (mouseX > x && mouseX < x+300 && mouseY > y && mouseY < y+50 && mousePressed) {///this makes it click, 
+    dec( num, numbers );///
+}
   fill(0);    //triple
   rect(x+400, y, 50, 50);
-
+if (mouseX > x && mouseX < x+400 && mouseY > y && mouseY < y+50 && mousePressed) {///this makes it click, 
+    triple( num, numbers );/////
+ }
   fill(230, 90, 45);    //random
   rect(x+500, y, 50, 50);
-
+if (mouseX > x && mouseX < x+500 && mouseY > y && mouseY < y+50 && mousePressed) {///this makes it click, 
+    randomize( num, numbers );////
+}
   fill(0, 225, 0);
   text("Big", x+20, y+30);
   text("Small", x+112, y+30);
@@ -151,58 +164,8 @@ boolean  hit (float mx, float my, float by, float bx, float w, float h) {
   if (my<by+h) return false;
   return true;
 }
-boolean  hit2 (float mx, float my, float bx, float by, float w, float h) {
-  // retur true if (mx,my)withing rect
-  if (mx>bx && mx<bx+w &&  my>by && my>by+h ) return true;
-  else return false;    //width
-}
-boolean  hit3 (float mx, float my, float bx, float by, float w, float h) {
-  // retur true if (mx,my) withing rect
-  if (mx>bx && mx<bx+w &&  my>by && my>by+h );
-  return true;
-}
-boolean  hit4 (float mx, float my, float bx, float by, float w, float h) {
-  // retur true if (mx,my) withing rect
-  if (mx>bx && mx<bx+w &&  my>by && my>by+h );
-  return false;
-}
-void mousePressed() {
 
 
-  if (hit (mouseX, mouseY, 25, 400, 50, 50)) big( num, numbers );
-  if (hit (mouseX, mouseY, 25, 400, 50, 50)) small( num, numbers );
-  if (hit (mouseX, mouseY, 25, 400, 50, 50)) sum( num, numbers );
-  if (hit (mouseX, mouseY, 25, 400, 50, 50)) dec( num, numbers );  // sub
-  if (hit (mouseX, mouseY, 25, 400, 50, 50)) triple( num, numbers );
-  if (hit (mouseX, mouseY, 25, 400, 50, 50)) randomize( num, numbers );
-  /*else if (key == 's') small( num, numbers );
-   //  
-   else if (key == 'i') inc( num, numbers );
-   else if (key == 'd') dec( num, numbers );
-   else if (key == 't') triple( num, numbers );
-   //
-   else if (key == 'r') randomize( num, numbers );
-   else text( "NO SUCH FUNCTION:  "+key, width/2, height/2 );
-   }*/
-}
-/*    b   big()       // Move biggest to end of array.
- s   small()     // Move smallest to beginning.
- i   inc()       // Increase each by one.
- d   dec()       // Decrease each by one.
- t   triple()    // Triple each ofthe numbers.
- r   randomize() // Replace all with random values.*/
 
-/*  big( int a[], int m )
- // Move biggest number to end of the array. 
- // (Swap array elements, to keep all numbers.)
- small( int b[], int m )
- // Move smallest to beginning of array 
- // (Swap, to keep all numbers.)
- inc( int d[], int n )
- // Increase each of the numbers by one.
- dec( int a[], int m )
- // Decrease each of the numbers by one.
- triple( int a[], int m )
- // Triple each of the numbers.
- randomize( int p[], int k )
- // Replace all numbers of random values..*/
+
+  //if (hit (mouseX, mouseY, 25, 400, 50, 50)) big( num, numbers );

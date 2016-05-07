@@ -205,4 +205,4 @@ void mousePressed() {
  triple( int a[], int m )
  // Triple each of the numbers.
  randomize( int p[], int k )
- // Replace all numbers of random values.*/
+ // Replace all numbers of random values..*/
